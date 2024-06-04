@@ -11,37 +11,9 @@ function App() {
 			<Box
 				sx={{
 					display: "flex",
-					justifyContent: "space-between",
-					px: 2,
-					py: 1,
-				}}
-			>
-				<Box sx={{ display: "flex", alignItems: "center" }}>
-					<Box sx={{ width: 50, height: 50, mr: 1 }}>
-						<img
-							src={logo_color}
-							alt="logo zovalger"
-							style={{ width: "100%", height: "100%", objectFit: "cover" }}
-						/>
-					</Box>
-
-					<Typography sx={{ fontSize: 20 }}>zovalger</Typography>
-				</Box>
-
-				<IconButton>
-					<MenuIcon />
-				</IconButton>
-				{/* <Box>
-					<Button> herramientas </Button>
-					<Button> Proyectos </Button>
-				</Box> */}
-			</Box>
-
-			<Box
-				sx={{
-					display: "flex",
 					flexDirection: { xs: "column", sm: "row" },
 					px: 2,
+					py: 8,
 				}}
 			>
 				<Box sx={{ order: { xs: 1, sm: -1 } }}>
@@ -88,48 +60,156 @@ function App() {
 					</Box>
 				</Box>
 
-				<Box sx={{ background: "red",maxHeight:"50vh"}}>foto</Box>
-			</Box>
-
-			{/* proyectos */}
-
-			<Typography>Proyectos</Typography>
-
-			<Box sx={{ display: "flex" }}>
-				<Box>
-					<Typography>titulo</Typography>
-					<Typography>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
-						deserunt tenetur ab quae incidunt accusamus, dignissimos expedita!
-					</Typography>
-				</Box>
-
-				<Box>imgane proyecto</Box>
-
-				<Box sx={{ display: "flex" }}>
-					<IconButton>
-						<GitHubIcon />
-					</IconButton>
-					<IconButton>
-						<GitHubIcon />
-					</IconButton>
-					<IconButton>
-						<GitHubIcon />
-					</IconButton>
-					<IconButton>
-						<GitHubIcon />
-					</IconButton>
+				<Box sx={{ maxHeight: "45vh", my: 2 }}>
+					<img
+						src={logo_color}
+						alt="logo zovalger"
+						style={{ width: "100%", height: "100%", objectFit: "contain" }}
+					/>
 				</Box>
 			</Box>
 
-			{/* herramientas */}
+			{/* *****************************************************
+	 															proyectos
+			*****************************************************	*/}
 
-			<Typography>Tecnologías</Typography>
+			<Box sx={{ background: "#f6f1ff", minHeight: "100vh", py: 8, px: 2 }}>
+				<Typography variant="h2" textAlign="center" sx={{ mb: 4 }}>
+					Proyectos
+				</Typography>
 
-			<Box sx={{ display: "flex" }}>
-				<Box sx={{ position: "relative", ":before": {} }}>
-					<Box>imagen</Box>
+				<Box
+					sx={{
+						display: "flex",
+						flexDirection: { xs: "column" },
+						boxShadow: 1,
+						borderRadius: 2,
+						background: "#fffe",
+						backdropFilter: "blur(3px)",
+						overflow: "hidden",
+						mt: 2,
+					}}
+				>
+					<Box sx={{}}>
+						<img
+							src={logo_color}
+							alt="logo zovalger"
+							style={{ width: "100%", height: "auto", objectFit: "contain" }}
+						/>
+					</Box>
+
+					<Box sx={{ px: 2, py: 1 }}>
+						<Box sx={{}}>
+							<Typography sx={{ fontWeight: 600, mb: 1 }}>
+								{" "}
+								UNERG TGS
+							</Typography>
+							<Typography>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
+								deserunt tenetur ab quae incidunt accusamus, dignissimos
+								expedita!
+							</Typography>
+						</Box>
+
+						<Box
+							sx={{
+								display: "flex",
+								".MuiIconButton-root": {
+									mt: 1,
+									mr: 2,
+									// ".MuiSvgIcon-root": { color: "#000" },
+								},
+							}}
+						>
+							<IconButton>
+								<GitHubIcon />
+							</IconButton>
+							<IconButton>
+								<GitHubIcon />
+							</IconButton>
+							<IconButton>
+								<GitHubIcon />
+							</IconButton>
+							<IconButton>
+								<GitHubIcon />
+							</IconButton>
+						</Box>
+					</Box>
 				</Box>
+			</Box>
+
+			{/* *****************************************************
+	 															herramientas
+			*****************************************************	*/}
+
+			<Box sx={{ background: "#f6f1ff", minHeight: "100vh", py: 8, px: 2 }}>
+				<Typography variant="h2" textAlign="center" sx={{ mb: 4 }}>
+					Tecnologías
+				</Typography>
+
+				<Box sx={{}}>
+					<Box
+						sx={{
+							position: "relative",
+							":before": {
+								content: `""`,
+								position: "absolute",
+								top: 0,
+								left: 0,
+								bottom: 0,
+								right: 0,
+								background: "#green",
+								transform: "scale(1.5)",
+							},
+						}}
+					>
+						<Box sx={{ width: 50, height: 50, mr: 1 }}>
+							<img
+								src={logo_color}
+								alt="logo zovalger"
+								style={{ width: "100%", height: "100%", objectFit: "cover" }}
+							/>
+						</Box>
+					</Box>
+				</Box>
+			</Box>
+
+			{/* *****************************************************
+	 															navbar
+			*****************************************************	*/}
+
+			<Box
+				sx={{
+					display: "flex",
+					justifyContent: "space-between",
+					px: 2,
+					py: 1,
+					position: "fixed",
+					top: 0,
+					width: "100%",
+					background: "#fffe",
+					backdropFilter: "blur(3px)",
+				}}
+			>
+				<Box sx={{ display: "flex", alignItems: "center" }}>
+					<Box sx={{ width: 50, height: 50, mr: 1 }}>
+						<img
+							src={logo_color}
+							alt="logo zovalger"
+							style={{ width: "100%", height: "100%", objectFit: "cover" }}
+						/>
+					</Box>
+
+					<Typography sx={{ fontSize: 20 }}>zovalger</Typography>
+				</Box>
+
+				<IconButton>
+					<MenuIcon />
+				</IconButton>
+				{/* <Box>
+					<Button> herramientas </Button>
+					<Button> Proyectos </Button>
+				</Box> */}
 			</Box>
 		</>
 	);
