@@ -1,8 +1,10 @@
 import screen_example from "../assets/screen_example.jpg";
-import { Box, IconButton, Typography } from "@mui/material";
-import GitHubIcon from "@mui/icons-material/GitHub";
+import { Box, Typography, Chip, useMediaQuery, useTheme } from "@mui/material";
 
 const ProyectCard = () => {
+	const theme = useTheme();
+	const isMd = useMediaQuery(theme.breakpoints.down("md"));
+
 	return (
 		<Box
 			sx={{
@@ -11,7 +13,7 @@ const ProyectCard = () => {
 				maxWidth: "900px",
 				boxShadow: 2,
 				borderRadius: 2,
-				background: "#fffe",
+				background: "#fff6",
 				backdropFilter: "blur(3px)",
 				overflow: "hidden",
 				justifyContent: "space-between",
@@ -22,9 +24,10 @@ const ProyectCard = () => {
 				sx={{
 					display: "flex",
 					flexDirection: "column",
+					justifyContent: "center",
 					px: 3,
-					py: 2,
-					boxShadow: "1px 1px 5px black",
+					py: 4,
+					order: { xs: 1, md: 0 }
 				}}
 			>
 				<Typography sx={{ fontWeight: 600, mb: 1 }} variant="h4">
@@ -37,24 +40,22 @@ const ProyectCard = () => {
 
 				<Box
 					sx={{
-						mt: "auto",
+						mt: 2,
+						display: "flex",
+						flexWrap: "wrap",
+						width: "100%",
+						// justifyContent: "space-between",
 						".MuiIconButton-root": {
 							mr: 2,
 						},
 					}}
 				>
-					<IconButton>
-						<GitHubIcon />
-					</IconButton>
-					<IconButton>
-						<GitHubIcon />
-					</IconButton>
-					<IconButton>
-						<GitHubIcon />
-					</IconButton>
-					<IconButton>
-						<GitHubIcon />
-					</IconButton>
+					<Chip
+						label="Socket"
+						color="primary"
+						variant="outlined"
+						size="small"
+					/>
 				</Box>
 			</Box>
 			<img
