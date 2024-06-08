@@ -4,6 +4,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import MenuIcon from "@mui/icons-material/Menu";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TelegramIcon from "@mui/icons-material/Telegram";
+import Learn from "./components/Learn";
 
 function App() {
 	return (
@@ -69,11 +70,29 @@ function App() {
 				</Box>
 			</Box>
 
+
+			{/* *****************************************************
+	 															conocimientos
+			*****************************************************	*/}
+
+			<Box
+				sx={{
+					background: "#F4F4F4",
+					minHeight: "100vh",
+					display: "flex",
+					justifyContent: "center",
+					alignItems: "center",
+					flexDirection:"column"
+				}}
+			>
+				<Learn />
+			</Box>
+
 			{/* *****************************************************
 	 															proyectos
 			*****************************************************	*/}
 
-			<Box sx={{ background: "#f6f1ff", minHeight: "100vh", py: 8, px: 2 }}>
+			<Box sx={{ minHeight: "100vh", py: 8, px: 2 }}>
 				<Typography variant="h2" textAlign="center" sx={{ mb: 4 }}>
 					Proyectos
 				</Typography>
