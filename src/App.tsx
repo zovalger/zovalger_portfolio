@@ -1,3 +1,4 @@
+import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import reactIcon from "./assets/logosSoftware/ReactIcon.png";
 import nextIcon from "./assets/logosSoftware/next.png";
 import javacriptIcon from "./assets/logosSoftware/javacript.png";
@@ -26,6 +27,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import ProyectCard from "./components/ProyectCard";
+import EmailIcon from '@mui/icons-material/Email';
+
 import Rombo from "./components/Rombo";
 import InfinityHorizontalScroll from "./components/InfinityHorizontalScroll";
 
@@ -42,7 +45,7 @@ function App() {
 					alignItems: "center",
 					// height: "100vh",
 					maxHeight: "1080px",
-					minHeight: "500px",
+					minHeight: "100vh",
 					px: 2,
 					pt: 10,
 					pb: 8,
@@ -90,6 +93,9 @@ function App() {
 								target="blank"
 							>
 								<LinkedInIcon />
+							</IconButton>
+							<IconButton href="mailto:zovalger@gmail.com" target="blank">
+								<EmailIcon />
 							</IconButton>
 							<IconButton href="https://t.me/zovalger" target="blank">
 								<TelegramIcon />
@@ -142,7 +148,7 @@ function App() {
 				sx={{
 					background: "#F4F4F4",
 					maxHeight: "1080px",
-					minHeight: "500px",
+					minHeight: "100vh",
 					display: "flex",
 					justifyContent: "center",
 					alignItems: "center",
@@ -251,7 +257,7 @@ function App() {
 				>
 					<Typography
 						variant="h2"
-						sx={{ fontSize: { xs: "2rem", sm: "3.75rem" } }}
+						sx={{ fontSize: { xs: "2rem", sm: "3.75rem" }, mb: 5 }}
 					>
 						Proyectos
 					</Typography>
@@ -260,6 +266,142 @@ function App() {
 					<ProyectCard />
 					<ProyectCard />
 					<ProyectCard />
+				</Box>
+			</Box>
+
+			<Box
+				sx={{
+					background: "#F4F4F4",
+					maxHeight: "1080px",
+					minHeight: "100vh",
+					display: "flex",
+					justifyContent: "center",
+					alignItems: "center",
+					// flexDirection: "column",
+					px: 2,
+					py: 8,
+				}}
+			>
+				<Box
+					sx={{
+						display: "flex",
+						justifyContent: "center",
+						alignItems: "center",
+						flexDirection: "column",
+						backgroundImage: `url(${garritauwu2});`,
+						backgroundRepeat: "no-repeat",
+						backgroundSize: "250px",
+						backgroundPosition: "100% 70%",
+						maxWidth: "900px",
+					}}
+				>
+					<Typography
+						variant="h2"
+						sx={{ fontSize: { xs: "2rem", sm: "3.75rem" }, mb: 5 }}
+					>
+						Mas sobre mi
+					</Typography>
+
+					<Grid container spacing={5} sx={{ maxWidth: "900px" }}>
+						<Grid
+							xs={12}
+							sm={6}
+							sx={{
+								order: { xs: 1, sm: 0 },
+								display: "flex",
+								alignItems: "center",
+							}}
+						>
+							<Typography>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
+								deserunt tenetur ab quae incidunt accusamus, dignissimos
+								expedita! Nostrum quisquam ipsum delectus voluptatum, deserunt
+								tempora unde facere deleniti culpa, recusandae laborum!
+							</Typography>
+						</Grid>
+						<Grid
+							xs={12}
+							sm={6}
+							sx={{ display: "flex", justifyContent: "center" }}
+						>
+							<Box
+								sx={{
+									background: "red",
+									width: 300,
+									height: 300,
+									borderRadius: "50%",
+								}}
+							>
+								{/* <img
+							src={logo_color}
+							alt="logo zovalger"
+							style={{ width: "100%", height: "100%", objectFit: "contain" }}
+						/> */}
+							</Box>
+						</Grid>
+					</Grid>
+				</Box>
+			</Box>
+
+			<Box
+				sx={{
+					display: "flex",
+					justifyContent: "center",
+					alignItems: "center",
+					// height: "100vh",
+					maxHeight: "1080px",
+					minHeight: "100vh",
+					px: 2,
+					pt: 10,
+					pb: 8,
+					backgroundImage: `url(${logo_trasparent});`,
+					backgroundRepeat: "no-repeat",
+					backgroundSize: "contain",
+					backgroundPosition: "center",
+				}}
+			>
+				<Box
+					sx={{
+						display: "flex",
+						flexDirection: "column",
+						justifyContent: "center",
+						alignItems: "center",
+					}}
+				>
+					<Typography
+						variant="h2"
+						sx={{ fontSize: { xs: "2rem", sm: "3.75rem" }, mb: 5 }}
+					>
+						Contactame
+					</Typography>
+
+					<Box
+						sx={{
+							display: "flex",
+							justifyContent: "space-evenly",
+							my: 2,
+							".MuiIconButton-root": {
+								mr: 1,
+								".MuiSvgIcon-root": { color: "#000", fontSize: 48 },
+							},
+						}}
+					>
+						<IconButton href="https://github.com/zovalger" target="blank">
+							<GitHubIcon />
+						</IconButton>
+						<IconButton
+							href="https://www.linkedin.com/in/zovalger/"
+							target="blank"
+						>
+							<LinkedInIcon />
+						</IconButton>
+						<IconButton href="mailto:zovalger@gmail.com" target="blank">
+							<EmailIcon />
+						</IconButton>
+						<IconButton href="https://t.me/zovalger" target="blank">
+							<TelegramIcon />
+						</IconButton>
+					</Box>
 				</Box>
 			</Box>
 

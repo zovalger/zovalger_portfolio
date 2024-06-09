@@ -9,8 +9,9 @@ const ProyectCard = () => {
 		<Box
 			sx={{
 				display: "flex",
+				flexDirection: { xs: "column", sm: "row" },
 				borderLeft: "5px solid #A800FD",
-				maxWidth: "900px",
+				maxWidth: { xs: "100%", sm: "900px" },
 				boxShadow: 2,
 				borderRadius: 2,
 				background: "#fff6",
@@ -22,12 +23,9 @@ const ProyectCard = () => {
 		>
 			<Box
 				sx={{
-					display: "flex",
-					flexDirection: "column",
-					justifyContent: "center",
 					px: 3,
 					py: 4,
-					order: { xs: 1, md: 0 }
+					order: { xs: 1, md: 0 },
 				}}
 			>
 				<Typography sx={{ fontWeight: 600, mb: 1 }} variant="h4">
@@ -58,11 +56,17 @@ const ProyectCard = () => {
 					/>
 				</Box>
 			</Box>
-			<img
-				src={screen_example}
-				alt="proyect example"
-				style={{ width: "auto", height: "300px", objectFit: "contain" }}
-			/>
+			<Box sx={{}}>
+				<img
+					src={screen_example}
+					alt="proyect example"
+					style={{
+						width: "100%",
+						height: "100%",
+						objectFit: "contain",
+					}}
+				/>
+			</Box>
 		</Box>
 	);
 };
