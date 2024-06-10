@@ -1,19 +1,21 @@
-import React, { useEffect, useRef, useState } from "react";
+"use client";
+import { useEffect, useRef, useState } from "react";
 import { Box } from "@mui/material";
-import mongooseIcon from "../assets/logosSoftware/mongoose.png";
-import axiosIcon from "../assets/logosSoftware/axios.png";
-import cloudinaryIcon from "../assets/logosSoftware/cloudinary.png";
-import materialUIIcon from "../assets/logosSoftware/material ui.png";
-import expressValidatorIcon from "../assets/logosSoftware/express validator.png";
-import leafletIcon from "../assets/logosSoftware/leaflet.png";
-import passportIcon from "../assets/logosSoftware/Passport-js.png";
-import expressIcon from "../assets/logosSoftware/express.png";
-import socketIcon from "../assets/logosSoftware/socket-io.png";
-import reactstrapIcon from "../assets/logosSoftware/Reactstrap.png";
-import formikIcon from "../assets/logosSoftware/formik.png";
-import sequelizeIcon from "../assets/logosSoftware/sequelize.png";
-import SQLiteIcon from "../assets/logosSoftware/SQLite.png";
-import reduxIcon from "../assets/logosSoftware/redux.png";
+import mongooseIcon from "@/assets/logosSoftware/mongoose.png";
+import axiosIcon from "@/assets/logosSoftware/axios.png";
+import cloudinaryIcon from "@/assets/logosSoftware/cloudinary.png";
+import materialUIIcon from "@/assets/logosSoftware/material ui.png";
+import expressValidatorIcon from "@/assets/logosSoftware/express validator.png";
+import leafletIcon from "@/assets/logosSoftware/leaflet.png";
+import passportIcon from "@/assets/logosSoftware/Passport-js.png";
+import expressIcon from "@/assets/logosSoftware/express.png";
+import socketIcon from "@/assets/logosSoftware/socket-io.png";
+import reactstrapIcon from "@/assets/logosSoftware/Reactstrap.png";
+import formikIcon from "@/assets/logosSoftware/formik.png";
+import sequelizeIcon from "@/assets/logosSoftware/sequelize.png";
+import SQLiteIcon from "@/assets/logosSoftware/SQLite.png";
+import reduxIcon from "@/assets/logosSoftware/redux.png";
+import Image from "next/image";
 
 const a = [
 	mongooseIcon,
@@ -37,14 +39,12 @@ const b = [
 const InfinityHorizontalScroll = () => {
 	const first = useRef<HTMLDivElement>(null);
 
-	const [z, setz] = useState<number>(0);
+	const [z, setz] = useState<NodeJS.Timeout | null>(null);
 
 	useEffect(() => {
 		setz(
 			setInterval(() => {
 				if (!first.current) return;
-
-				
 
 				if (first.current.scrollLeft > first.current.scrollWidth / 2)
 					first.current.scrollTo({ behavior: "instant", left: 60 });
@@ -54,7 +54,7 @@ const InfinityHorizontalScroll = () => {
 		);
 
 		return () => {
-			clearInterval(z);
+			if (z) clearInterval(z);
 		};
 	}, [first.current]);
 
@@ -88,32 +88,36 @@ const InfinityHorizontalScroll = () => {
 				}}
 			>
 				<Box sx={{ display: "flex", pl: 8, mb: 2 }}>
-					{a.map((i) => (
-						<img
+					{a.map((i, ii) => (
+						<Image
 							src={i}
+							key={ii}
 							alt="software Icon"
 							style={{ maxHeight: 32, marginRight: 48, width: "auto" }}
 						/>
 					))}
-					{a.map((i) => (
-						<img
+					{a.map((i, ii) => (
+						<Image
 							src={i}
+							key={ii + "2"}
 							alt="software Icon"
 							style={{ maxHeight: 32, marginRight: 48, width: "auto" }}
 						/>
 					))}
 				</Box>
 				<Box sx={{ display: "flex" }}>
-					{b.map((i) => (
-						<img
+					{b.map((i, ii) => (
+						<Image
 							src={i}
+							key={ii + "3"}
 							alt="software Icon"
 							style={{ maxHeight: 32, marginRight: 48, width: "auto" }}
 						/>
 					))}
-					{b.map((i) => (
-						<img
+					{b.map((i, ii) => (
+						<Image
 							src={i}
+							key={ii + "4"}
 							alt="software Icon"
 							style={{ maxHeight: 32, marginRight: 48, width: "auto" }}
 						/>

@@ -1,9 +1,9 @@
 import { Box } from "@mui/material";
-
-
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import Image from "next/image";
 
 interface props {
-	icon: string;
+	icon: string | StaticImport;
 	p?: string | number;
 }
 
@@ -32,7 +32,7 @@ const Rombo = ({ icon, p = 3 }: props) => {
 				img: { objectFit: "contain", position: "relative" },
 			}}
 		>
-			<img src={icon} alt="software Icon" />
+			<Image src={icon} alt="software Icon" />
 		</Box>
 	);
 };
