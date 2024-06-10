@@ -9,7 +9,9 @@ const content = {
 
 	main: {
 		img: logo_color,
-		shortDescrition: ["hola"],
+		shortDescrition: [
+			"Hola, soy Germán Castro, un apasionado desarrollador web con más de dos años de experiencia en la creación de sitios y aplicaciones web. Originario de Venezuela, he tenido el privilegio de trabajar en varios proyectos que van desde páginas web informativas hasta grandes proyectos personales. Mi enfoque se centra en la implementación de tecnologías modernas y prácticas de desarrollo ágiles para ofrecer soluciones efectivas y atractivas. Estoy comprometido a seguir creciendo profesionalmente y aportar mi experiencia y habilidades a nuevos desafíos. ¡Bienvenido a mi portafolio!",
+		],
 	},
 
 	proyects: [
