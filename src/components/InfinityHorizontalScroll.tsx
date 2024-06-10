@@ -1,6 +1,8 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { Box } from "@mui/material";
+import Image from "next/image";
+import Box from "@mui/material/Box";
+
 import mongooseIcon from "@/assets/logosSoftware/mongoose.png";
 import axiosIcon from "@/assets/logosSoftware/axios.png";
 import cloudinaryIcon from "@/assets/logosSoftware/cloudinary.png";
@@ -15,9 +17,8 @@ import formikIcon from "@/assets/logosSoftware/formik.png";
 import sequelizeIcon from "@/assets/logosSoftware/sequelize.png";
 import SQLiteIcon from "@/assets/logosSoftware/SQLite.png";
 import reduxIcon from "@/assets/logosSoftware/redux.png";
-import Image from "next/image";
 
-const a = [
+const firstLine = [
 	mongooseIcon,
 	reactstrapIcon,
 	cloudinaryIcon,
@@ -26,7 +27,7 @@ const a = [
 	leafletIcon,
 	reduxIcon,
 ];
-const b = [
+const secondLine = [
 	expressIcon,
 	axiosIcon,
 	socketIcon,
@@ -37,26 +38,49 @@ const b = [
 ];
 
 const InfinityHorizontalScroll = () => {
-	const first = useRef<HTMLDivElement>(null);
+	const containerScroll = useRef<HTMLDivElement>(null);
 
-	const [z, setz] = useState<NodeJS.Timeout | null>(null);
+	const [intervalId, setIntervalId] = useState<NodeJS.Timeout | null>(null);
 
 	useEffect(() => {
-		setz(
+		setIntervalId(
 			setInterval(() => {
-				if (!first.current) return;
+				if (!containerScroll.current) return;
 
-				if (first.current.scrollLeft > first.current.scrollWidth / 2)
-					first.current.scrollTo({ behavior: "instant", left: 60 });
+				if (
+					containerScroll.current.scrollLeft >
+					containerScroll.current.scrollWidth / 2
+				)
+					containerScroll.current.scrollTo({ behavior: "instant", left: 60 });
 
-				first.current.scrollBy({ behavior: "smooth", left: 2 });
+				containerScroll.current.scrollBy({ behavior: "smooth", left: 2 });
 			}, 90)
 		);
 
 		return () => {
-			if (z) clearInterval(z);
+			if (intervalId) clearInterval(intervalId);
 		};
-	}, [first.current]);
+	}, [containerScroll.current]);
+
+	const lineOne = firstLine.map((imgData, index) => (
+		<Image
+			src={imgData}
+			key={index}
+			alt="software Icon"
+			height={32}
+			style={{ maxHeight: 32, marginRight: 48, width: "auto" }}
+		/>
+	));
+
+	const lineTwo = secondLine.map((imgData, index) => (
+		<Image
+			src={imgData}
+			key={index}
+			alt="software Icon"
+			height={32}
+			style={{ maxHeight: 32, marginRight: 48, width: "auto" }}
+		/>
+	));
 
 	return (
 		<Box
@@ -78,7 +102,7 @@ const InfinityHorizontalScroll = () => {
 			/>
 
 			<Box
-				ref={first}
+				ref={containerScroll}
 				sx={{
 					overflowX: "scroll",
 					px: 8,
@@ -88,40 +112,12 @@ const InfinityHorizontalScroll = () => {
 				}}
 			>
 				<Box sx={{ display: "flex", pl: 8, mb: 2 }}>
-					{a.map((i, ii) => (
-						<Image
-							src={i}
-							key={ii}
-							alt="software Icon"
-							style={{ maxHeight: 32, marginRight: 48, width: "auto" }}
-						/>
-					))}
-					{a.map((i, ii) => (
-						<Image
-							src={i}
-							key={ii + "2"}
-							alt="software Icon"
-							style={{ maxHeight: 32, marginRight: 48, width: "auto" }}
-						/>
-					))}
+					{lineOne}
+					{lineOne}
 				</Box>
 				<Box sx={{ display: "flex" }}>
-					{b.map((i, ii) => (
-						<Image
-							src={i}
-							key={ii + "3"}
-							alt="software Icon"
-							style={{ maxHeight: 32, marginRight: 48, width: "auto" }}
-						/>
-					))}
-					{b.map((i, ii) => (
-						<Image
-							src={i}
-							key={ii + "4"}
-							alt="software Icon"
-							style={{ maxHeight: 32, marginRight: 48, width: "auto" }}
-						/>
-					))}
+					{lineTwo}
+					{lineTwo}
 				</Box>
 			</Box>
 

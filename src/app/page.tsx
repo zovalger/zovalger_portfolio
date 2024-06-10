@@ -34,6 +34,7 @@ import Image from "next/image";
 import { ThemeProvider } from "@emotion/react";
 import { CssBaseline } from "@mui/material";
 import themeConfig from "./theme";
+import content from "@/content";
 
 export default function Home() {
 	const theme = useTheme();
@@ -72,12 +73,9 @@ export default function Home() {
 								Developer
 							</Typography>
 
-							<Typography>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
-								deserunt tenetur ab quae incidunt accusamus, dignissimos
-								expedita! Nostrum quisquam ipsum delectus voluptatum, deserunt
-								tempora unde facere deleniti culpa, recusandae laborum!
-							</Typography>
+							{content.main.shortDescrition.map((text, index) => (
+								<Typography key={index}>{text}</Typography>
+							))}
 
 							<Box
 								sx={{
@@ -138,11 +136,15 @@ export default function Home() {
 									borderRadius: "50%",
 								}}
 							>
-								{/* <img
-                src={logo_color}
-                alt="logo zovalger"
-                style={{ width: "100%", height: "100%", objectFit: "contain" }}
-              /> */}
+								<Image
+									src={content.main.img}
+									alt="logo zovalger"
+									style={{
+										width: "100%",
+										height: "100%",
+										objectFit: "contain",
+									}}
+								/>
 							</Box>
 						</Grid>
 					</Grid>
@@ -266,10 +268,9 @@ export default function Home() {
 							Proyectos
 						</Typography>
 
-						<ProyectCard />
-						<ProyectCard />
-						<ProyectCard />
-						<ProyectCard />
+						{content.proyects.map((p, index) => (
+							<ProyectCard data={p} key={index} />
+						))}
 					</Box>
 				</Box>
 				<Box
@@ -316,12 +317,9 @@ export default function Home() {
 									alignItems: "center",
 								}}
 							>
-								<Typography>
-									Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
-									deserunt tenetur ab quae incidunt accusamus, dignissimos
-									expedita! Nostrum quisquam ipsum delectus voluptatum, deserunt
-									tempora unde facere deleniti culpa, recusandae laborum!
-								</Typography>
+								{content.moreAbout.description.map((text, index) => (
+									<Typography key={index}>{text}</Typography>
+								))}
 							</Grid>
 							<Grid
 								item
@@ -337,11 +335,15 @@ export default function Home() {
 										borderRadius: "50%",
 									}}
 								>
-									{/* <img
-                src={logo_color}
-                alt="logo zovalger"
-                style={{ width: "100%", height: "100%", objectFit: "contain" }}
-              /> */}
+									<Image
+										src={content.moreAbout.photo}
+										alt="logo zovalger"
+										style={{
+											width: "100%",
+											height: "100%",
+											objectFit: "contain",
+										}}
+									/>
 								</Box>
 							</Grid>
 						</Grid>
@@ -438,13 +440,15 @@ export default function Home() {
 						<Box sx={{ display: "flex", alignItems: "center" }}>
 							<Box sx={{ width: 50, height: 50, mr: 1 }}>
 								<Image
-									src={logo_color}
+									src={content.nav.logo}
 									alt="logo zovalger"
 									style={{ width: "100%", height: "100%", objectFit: "cover" }}
 								/>
 							</Box>
 
-							<Typography sx={{ fontSize: 20 }}>zovalger</Typography>
+							<Typography sx={{ fontSize: 20 }}>
+								{content.nav.brandName}
+							</Typography>
 						</Box>
 
 						<Box>
