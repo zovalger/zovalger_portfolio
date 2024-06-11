@@ -16,9 +16,33 @@ const content = {
 
 	proyects: [
 		{
-			title: "proyecto",
-			description: ["es un proyecto super way"],
-			technologys: ["muchas", "cosas", ":3"],
+			title: "Jeanger",
+			description: [
+				"Proyecto Full Stack MERN destinado principalmente para la empresa Inversiones Jeanger, que les proporciona múltiples herramientas para la búsqueda y facturación de productos, cronómetros para gestión de tareas que a su vez están sincronizados entre todas las instancias de la interfaz, además de proporcionarle un inventario que da una visión general de todos los productos.",
+				"El cliente y el servidor son dos servidores separados comunicados por una  API REST ",
+			],
+			githubLinks: [
+				"https://github.com/zovalger/JEANGER-APP",
+				"https://github.com/zovalger/JEANGER-APP-SERVER",
+			],
+			siteLink: ["https://jeanger.vercel.app/"],
+			technologys: [
+				"React",
+				"Material UI",
+				"Redux",
+				"Axios",
+				"Moment",
+				"Formik",
+				"Socket.IO",
+				"Yup",
+				"Express ",
+				"JWT",
+				"Mongoose",
+				"Cheerio",
+				"Cloudinary",
+				"Node-Cron",
+				"MongoDB",
+			],
 			imgs: [screen_example, screen_example],
 		},
 	],

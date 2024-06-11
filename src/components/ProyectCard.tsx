@@ -10,6 +10,9 @@ import IconButton from "@mui/material/IconButton";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import CloseIcon from "@mui/icons-material/Close";
+import OpenInBrowserIcon from "@mui/icons-material/OpenInBrowser";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import { Button, Tooltip } from "@mui/material";
 
 interface props {
 	data: {
@@ -17,11 +20,13 @@ interface props {
 		description: string[];
 		technologys: string[];
 		imgs: StaticImport[];
+		githubLinks: string[];
+		siteLink?: string[];
 	};
 }
 
 const ProyectCard = ({ data }: props) => {
-	const { title, description, technologys, imgs } = data;
+	const { title, description, githubLinks, siteLink, technologys, imgs } = data;
 
 	const [imgSelected, setImgSelected] = useState<number>(0);
 
@@ -67,8 +72,8 @@ const ProyectCard = ({ data }: props) => {
 					overflow: "hidden",
 					justifyContent: "space-between",
 					mb: 2,
-					transition: "transform 100ms",
-					":hover": { transform: "scale(1.01)" },
+					transition: "outline 100ms",
+					":hover": { outline: "5px solid #A800FD" },
 				}}
 			>
 				<Box
@@ -88,6 +93,40 @@ const ProyectCard = ({ data }: props) => {
 
 					<Box
 						sx={{
+							my: 1,
+							".MuiButton-root": {
+								mr: 1,
+							},
+							// ".MuiSvgIcon-root": { mr: 1 },
+						}}
+					>
+						<Tooltip title="Repositorio">
+							<Button
+								variant="outlined"
+								onClick={(e) => e.stopPropagation()}
+								href={githubLinks[0]}
+								target="blank"
+							>
+								<GitHubIcon />
+							</Button>
+						</Tooltip>
+
+						{siteLink && (
+							<Tooltip title="Web APP">
+								<Button
+									variant="outlined"
+									onClick={(e) => e.stopPropagation()}
+									href={siteLink[0]}
+									target="blank"
+								>
+									<OpenInBrowserIcon />
+								</Button>
+							</Tooltip>
+						)}
+					</Box>
+
+					<Box
+						sx={{
 							mt: 2,
 							display: "flex",
 							flexWrap: "wrap",
@@ -99,7 +138,7 @@ const ProyectCard = ({ data }: props) => {
 					>
 						{technologys.map((text, index) => (
 							<Chip
-								sx={{ mr: 1 }}
+								sx={{ mr: 0.5, mb: 1 }}
 								key={index}
 								label={text}
 								color="primary"
@@ -121,6 +160,8 @@ const ProyectCard = ({ data }: props) => {
 					/>
 				</Box>
 			</Box>
+
+			{/*  ************************* visor de imagenes ************************* */}
 			<Backdrop
 				sx={{
 					color: "#fff",
