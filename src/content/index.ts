@@ -104,7 +104,7 @@ const content = {
 
 			description: [
 				"Software full stack inspirada en la aplicación Microsoft ToDo",
-				"Nota: En desarrollo ",
+				"(En desarrollo)",
 			],
 			githubLinks: [
 				"https://github.com/zovalger/to_do_app_server",

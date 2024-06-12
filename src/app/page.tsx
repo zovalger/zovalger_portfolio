@@ -8,8 +8,6 @@ import githubIcon from "@/assets/logosSoftware/github.png";
 import nodeIcon from "@/assets/logosSoftware/node.png";
 import mysqlIcon from "@/assets/logosSoftware/mysql_logo.png";
 import mongoDBIcon from "@/assets/logosSoftware/mongoDB_Icon.png";
-
-import logo_color from "@/assets/logo_color.jpg";
 import garritauwu from "@/assets/garra.png";
 import garritauwu2 from "@/assets/garra_mirror.png";
 import logo_trasparent from "@/assets/logo_trasparent.png";
@@ -39,6 +37,11 @@ import content from "@/content";
 export default function Home() {
 	const theme = useTheme();
 	const isMd = useMediaQuery(theme.breakpoints.down("md"));
+
+	const media = Math.floor(content.proyects.length / 2);
+
+	const a = content.proyects.slice(0, media);
+	const b = content.proyects.slice(media);
 
 	return (
 		<>
@@ -268,9 +271,19 @@ export default function Home() {
 							Proyectos
 						</Typography>
 
-						{content.proyects.map((p, index) => (
-							<ProyectCard data={p} key={index} />
-						))}
+						<Grid container spacing={5} sx={{ maxWidth: "900px" }}>
+							<Grid item xs={12} sm={6}>
+								{a.map((p, index) => (
+									<ProyectCard data={p} key={index} />
+								))}
+							</Grid>
+
+							<Grid item xs={12} sm={6}>
+								{b.map((p, index) => (
+									<ProyectCard data={p} key={index} />
+								))}
+							</Grid>
+						</Grid>
 					</Box>
 				</Box>
 				<Box

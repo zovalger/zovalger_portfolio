@@ -32,7 +32,7 @@ const Rombo = ({ icon, p = 3 }: props) => {
 				img: { objectFit: "contain", position: "relative" },
 			}}
 		>
-			<Image src={icon} alt="software Icon" />
+			<Image src={icon} alt="software Icon" height={64} />
 		</Box>
 	);
 };

@@ -62,7 +62,7 @@ const ProyectCard = ({ data }: props) => {
 				onClick={handleOpen}
 				sx={{
 					display: "flex",
-					flexDirection: { xs: "column", sm: "row" },
+					flexDirection: "column",
 					borderLeft: "5px solid #A800FD",
 					maxWidth: { xs: "100%", sm: "900px" },
 					boxShadow: 2,
@@ -72,15 +72,15 @@ const ProyectCard = ({ data }: props) => {
 					overflow: "hidden",
 					justifyContent: "space-between",
 					mb: 2,
-					transition: "outline 100ms",
-					":hover": { outline: "5px solid #A800FD" },
+					transition: "boxShadow 100ms",
+					":hover": { boxShadow: 6 },
 				}}
 			>
 				<Box
 					sx={{
 						px: 3,
 						py: 4,
-						order: { xs: 1, md: 0 },
+						order: 1 //{ xs: 1, sm: 0 },
 					}}
 				>
 					<Typography sx={{ fontWeight: 600, mb: 1 }} variant="h4">
@@ -148,9 +148,10 @@ const ProyectCard = ({ data }: props) => {
 						))}
 					</Box>
 				</Box>
-				<Box>
+				<Box sx={{ minWidth: "50%" }}>
 					<Image
 						src={imgs[0]}
+						width={512}
 						alt="proyect example"
 						style={{
 							width: "100%",
@@ -162,131 +163,134 @@ const ProyectCard = ({ data }: props) => {
 			</Box>
 
 			{/*  ************************* visor de imagenes ************************* */}
-			<Backdrop
-				sx={{
-					color: "#fff",
-					zIndex: (theme) => theme.zIndex.drawer + 1,
-					// position: "relative",
-				}}
-				open={openBackdrop}
-				onClick={handleClose}
-			>
-				<Box
-					onClick={(e) => e.stopPropagation()}
-					sx={{
-						position: "relative",
-						display: "flex",
-						alignItems: "center",
-					}}
-				>
-					<Image
-						src={imgs[imgSelected]}
-						alt="proyect example"
-						style={{
-							width: "100%",
-							height: "100%",
-							objectFit: "contain",
-						}}
-					/>
 
+			{openBackdrop && (
+				<Backdrop
+					sx={{
+						color: "#fff",
+						zIndex: (theme) => theme.zIndex.drawer + 1,
+						// position: "relative",
+					}}
+					open={openBackdrop}
+					onClick={handleClose}
+				>
 					<Box
-						onClick={lastImage}
+						onClick={(e) => e.stopPropagation()}
 						sx={{
-							position: "absolute",
-							left: 0,
-							width: "30%",
-							height: "100%",
+							position: "relative",
 							display: "flex",
 							alignItems: "center",
-							p: 2,
-							background: "#fff0",
-							":hover": {
-								background: "linear-gradient(90deg, #0003 0%, #0000 100%)",
-							},
 						}}
 					>
-						<ChevronLeftIcon sx={{ color: "#888" }} />
-					</Box>
-					<Box
-						onClick={nextImage}
-						sx={{
-							position: "absolute",
-							right: 0,
-							width: "30%",
-							height: "100%",
-
-							display: "flex",
-							alignItems: "center",
-							justifyContent: "flex-end",
-							p: 2,
-							background: "#fff0",
-							":hover": {
-								background: "linear-gradient(-90deg, #0003 0%, #0000 100%)",
-							},
-						}}
-					>
-						<ChevronRightIcon sx={{ color: "#888" }} />
-					</Box>
-				</Box>
-
-				<Box
-					onClick={(e) => e.stopPropagation()}
-					sx={{
-						position: "absolute",
-						bottom: "1rem",
-
-						px: 2,
-						py: 1,
-						// background: "red",
-						display: "flex",
-						overflowX: "auto",
-						overflowY: "hidden",
-
-						"&>.MuiBox-root": {
-							mr: 1,
-							flexShrink: 0,
-							height: "5rem",
-							borderRadius: 1,
-							overflow: "hidden",
-						},
-					}}
-				>
-					{imgs.map((img, index) => (
-						<Box
-							key={index}
-							ref={imgSelected == index ? selectImagen : null}
-							onClick={() => {
-								setImgSelected(index);
+						<Image
+							src={imgs[imgSelected]}
+							alt="proyect example"
+							style={{
+								width: "100%",
+								height: "100%",
+								objectFit: "contain",
 							}}
+						/>
+
+						<Box
+							onClick={lastImage}
 							sx={{
-								transition: "outline 150ms",
-								outline: imgSelected == index ? "2px solid red" : "none",
+								position: "absolute",
+								left: 0,
+								width: "30%",
+								height: "100%",
+								display: "flex",
+								alignItems: "center",
+								p: 2,
+								background: "#fff0",
+								":hover": {
+									background: "linear-gradient(90deg, #0003 0%, #0000 100%)",
+								},
 							}}
 						>
-							<Image
-								src={img}
-								alt="proyect example"
-								style={{
-									width: "100%",
-									height: "100%",
-									objectFit: "contain",
-								}}
-							/>
+							<ChevronLeftIcon sx={{ color: "#888" }} />
 						</Box>
-					))}
-				</Box>
+						<Box
+							onClick={nextImage}
+							sx={{
+								position: "absolute",
+								right: 0,
+								width: "30%",
+								height: "100%",
 
-				<IconButton
-					sx={{
-						position: "absolute",
-						right: "1rem",
-						top: "1rem",
-						color: "#fff",
-					}}
-				>
-					<CloseIcon />
-				</IconButton>
-			</Backdrop>
+								display: "flex",
+								alignItems: "center",
+								justifyContent: "flex-end",
+								p: 2,
+								background: "#fff0",
+								":hover": {
+									background: "linear-gradient(-90deg, #0003 0%, #0000 100%)",
+								},
+							}}
+						>
+							<ChevronRightIcon sx={{ color: "#888" }} />
+						</Box>
+					</Box>
+
+					<Box
+						onClick={(e) => e.stopPropagation()}
+						sx={{
+							position: "absolute",
+							bottom: "1rem",
+
+							px: 2,
+							py: 1,
+							// background: "red",
+							display: "flex",
+							overflowX: "auto",
+							overflowY: "hidden",
+
+							"&>.MuiBox-root": {
+								mr: 1,
+								flexShrink: 0,
+								height: "5rem",
+								borderRadius: 1,
+								overflow: "hidden",
+							},
+						}}
+					>
+						{imgs.map((img, index) => (
+							<Box
+								key={index}
+								ref={imgSelected == index ? selectImagen : null}
+								onClick={() => {
+									setImgSelected(index);
+								}}
+								sx={{
+									transition: "outline 150ms",
+									outline: imgSelected == index ? "2px solid red" : "none",
+								}}
+							>
+								<Image
+									src={img}
+									alt="proyect example"
+									style={{
+										width: "100%",
+										height: "100%",
+										objectFit: "contain",
+									}}
+								/>
+							</Box>
+						))}
+					</Box>
+
+					<IconButton
+						sx={{
+							position: "absolute",
+							right: "1rem",
+							top: "1rem",
+							color: "#fff",
+						}}
+					>
+						<CloseIcon />
+					</IconButton>
+				</Backdrop>
+			)}
 		</>
 	);
 };
