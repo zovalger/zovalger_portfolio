@@ -13,20 +13,14 @@ import CloseIcon from "@mui/icons-material/Close";
 import OpenInBrowserIcon from "@mui/icons-material/OpenInBrowser";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { Button, Tooltip } from "@mui/material";
+import { proyectData } from "@/content/proyects";
 
 interface props {
-	data: {
-		title: string;
-		description: string[];
-		technologys: string[];
-		imgs: StaticImport[];
-		githubLinks: string[];
-		siteLink?: string[];
-	};
+	data: proyectData;
 }
 
 const ProyectCard = ({ data }: props) => {
-	const { title, description, githubLinks, siteLink, technologys, imgs } = data;
+	const { title, description,shortDescription, githubLinks, siteLink, technologys, imgs } = data;
 
 	const [imgSelected, setImgSelected] = useState<number>(0);
 
@@ -80,14 +74,14 @@ const ProyectCard = ({ data }: props) => {
 					sx={{
 						px: 3,
 						py: 4,
-						order: 1 //{ xs: 1, sm: 0 },
+						order: 1, //{ xs: 1, sm: 0 },
 					}}
 				>
-					<Typography sx={{ fontWeight: 600, mb: 1 }} variant="h4">
+					<Typography sx={{ fontWeight: 600, mb: 1 }} variant="h5">
 						{title}
 					</Typography>
 
-					{description.map((text, index) => (
+					{shortDescription.map((text, index) => (
 						<Typography key={index}>{text}</Typography>
 					))}
 
@@ -157,6 +151,7 @@ const ProyectCard = ({ data }: props) => {
 							width: "100%",
 							height: "100%",
 							objectFit: "contain",
+							boxShadow:"1px 1px 4px #0004"
 						}}
 					/>
 				</Box>

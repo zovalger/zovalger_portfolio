@@ -3,7 +3,10 @@ import { red } from "@mui/material/colors";
 
 // A custom theme for this app
 const theme = createTheme({
-	typography: { h1: {}, h2: { fontWeight: 600 } },
+	typography: {
+		h1: {},
+		h2: { fontWeight: 600, fontSize: "2rem" },
+	},
 	palette: {
 		primary: {
 			main: "#556cd6",

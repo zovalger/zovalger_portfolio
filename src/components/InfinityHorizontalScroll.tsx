@@ -85,7 +85,7 @@ const InfinityHorizontalScroll = () => {
 	return (
 		<Box
 			sx={{
-				maxWidth: "900px",
+				maxWidth: "1000px",
 				position: "relative",
 			}}
 		>

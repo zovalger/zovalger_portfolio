@@ -64,7 +64,7 @@ export default function Home() {
 						backgroundPosition: "center",
 					}}
 				>
-					<Grid container spacing={5} sx={{ maxWidth: "900px" }}>
+					<Grid container spacing={5} sx={{ maxWidth: "1000px" }}>
 						<Grid item xs={12} sm={6} sx={{ order: { xs: 1, sm: 0 } }}>
 							<Typography sx={{ fontSize: 60, fontWeight: 600 }}>
 								<Typography
@@ -178,15 +178,10 @@ export default function Home() {
 							backgroundRepeat: "no-repeat",
 							backgroundSize: "250px",
 							backgroundPosition: "100% 70%",
-							maxWidth: "900px",
+							maxWidth: "1000px",
 						}}
 					>
-						<Typography
-							variant="h2"
-							sx={{ fontSize: { xs: "2rem", sm: "3.75rem" } }}
-						>
-							Conocimientos
-						</Typography>
+						<Typography variant="h2">Conocimientos</Typography>
 
 						{isMd ? (
 							<>
@@ -261,17 +256,14 @@ export default function Home() {
 							backgroundRepeat: "no-repeat",
 							backgroundSize: "250px",
 							backgroundPosition: "0% 0%",
-							maxWidth: "900px",
+							maxWidth: "1000px",
 						}}
 					>
-						<Typography
-							variant="h2"
-							sx={{ fontSize: { xs: "2rem", sm: "3.75rem" }, mb: 5 }}
-						>
+						<Typography variant="h2" sx={{ mb: 5 }}>
 							Proyectos
 						</Typography>
 
-						<Grid container spacing={5} sx={{ maxWidth: "900px" }}>
+						<Grid container spacing={5} sx={{ maxWidth: "1000px" }}>
 							<Grid item xs={12} sm={6}>
 								{a.map((p, index) => (
 									<ProyectCard data={p} key={index} />
@@ -309,29 +301,26 @@ export default function Home() {
 							backgroundRepeat: "no-repeat",
 							backgroundSize: "250px",
 							backgroundPosition: "100% 70%",
-							maxWidth: "900px",
+							maxWidth: "1000px",
 						}}
 					>
-						<Typography
-							variant="h2"
-							sx={{ fontSize: { xs: "2rem", sm: "3.75rem" }, mb: 5 }}
-						>
+						<Typography variant="h2" sx={{ fontSize: "2rem", mb: 5 }}>
 							Mas sobre mi
 						</Typography>
 
-						<Grid container spacing={5} sx={{ maxWidth: "900px" }}>
+						<Grid container spacing={5} sx={{ maxWidth: "1000px" }}>
 							<Grid
 								item
 								xs={12}
 								sm={6}
 								sx={{
 									order: { xs: 1, sm: 0 },
-									display: "flex",
-									alignItems: "center",
 								}}
 							>
 								{content.moreAbout.description.map((text, index) => (
-									<Typography key={index}>{text}</Typography>
+									<Typography key={index} sx={{ mb: "1rem" }}>
+										{text}
+									</Typography>
 								))}
 							</Grid>
 							<Grid
@@ -442,7 +431,7 @@ export default function Home() {
 				>
 					<Box
 						sx={{
-							maxWidth: "900px",
+							maxWidth: "1000px",
 							display: "flex",
 							justifyContent: "space-between",
 							px: 2,
@@ -459,7 +448,7 @@ export default function Home() {
 								/>
 							</Box>
 
-							<Typography sx={{ fontSize: 20 }}>
+							<Typography sx={{ fontSize: 20 }} component="span">
 								{content.nav.brandName}
 							</Typography>
 						</Box>
@@ -475,7 +464,7 @@ export default function Home() {
             <Button> Proyectos </Button>
           </Box> */}
 					</Box>
-				</Box>{" "}
+				</Box>
 			</ThemeProvider>
 		</>
 	);
