@@ -8,8 +8,8 @@ import githubIcon from "@/assets/logosSoftware/github.png";
 import nodeIcon from "@/assets/logosSoftware/node.png";
 import mysqlIcon from "@/assets/logosSoftware/mysql_logo.png";
 import mongoDBIcon from "@/assets/logosSoftware/mongoDB_Icon.png";
-import garritauwu from "@/assets/garra.png";
-import garritauwu2 from "@/assets/garra_mirror.png";
+import garritaLeft from "@/assets/garra.png";
+import garritaRight from "@/assets/garra_mirror.png";
 import logo_trasparent from "@/assets/logo_trasparent.png";
 import {
 	Box,
@@ -56,15 +56,20 @@ export default function Home() {
 						maxHeight: "1080px",
 						minHeight: "100vh",
 						px: 2,
-						pt: 10,
+						pt: { xs: 10, md: 15 },
 						pb: 8,
-						backgroundImage: `url(${logo_trasparent});`,
+						backgroundImage: `url(${logo_trasparent.src});`,
 						backgroundRepeat: "no-repeat",
 						backgroundSize: "contain",
 						backgroundPosition: "center",
 					}}
 				>
-					<Grid container spacing={5} sx={{ maxWidth: "1000px" }}>
+					<Grid
+						container
+						rowSpacing={2}
+						columnSpacing={5}
+						sx={{ maxWidth: "1000px" }}
+					>
 						<Grid item xs={12} sm={6} sx={{ order: { xs: 1, sm: 0 } }}>
 							<Typography sx={{ fontSize: 60, fontWeight: 600 }}>
 								<Typography
@@ -133,15 +138,16 @@ export default function Home() {
 						>
 							<Box
 								sx={{
-									background: "red",
-									width: 300,
-									height: 300,
-									borderRadius: "50%",
+									// background: "red",
+									width: { xs: "50%", sm: "100%" },
+									maxHeight: { xs: "auto", sm: "70%" },
+									// borderRadius: "50%",
 								}}
 							>
 								<Image
 									src={content.main.img}
 									alt="logo zovalger"
+									width={480}
 									style={{
 										width: "100%",
 										height: "100%",
@@ -174,7 +180,7 @@ export default function Home() {
 							justifyContent: "center",
 							alignItems: "center",
 							flexDirection: "column",
-							backgroundImage: `url(${garritauwu2});`,
+							backgroundImage: `url(${garritaRight.src});`,
 							backgroundRepeat: "no-repeat",
 							backgroundSize: "250px",
 							backgroundPosition: "100% 70%",
@@ -252,7 +258,7 @@ export default function Home() {
 							justifyContent: "center",
 							alignItems: "center",
 							flexDirection: "column",
-							backgroundImage: `url(${garritauwu});`,
+							backgroundImage: `url(${garritaLeft.src});`,
 							backgroundRepeat: "no-repeat",
 							backgroundSize: "250px",
 							backgroundPosition: "0% 0%",
@@ -297,7 +303,7 @@ export default function Home() {
 							justifyContent: "center",
 							alignItems: "center",
 							flexDirection: "column",
-							backgroundImage: `url(${garritauwu2});`,
+							backgroundImage: `url(${garritaRight.src});`,
 							backgroundRepeat: "no-repeat",
 							backgroundSize: "250px",
 							backgroundPosition: "100% 70%",

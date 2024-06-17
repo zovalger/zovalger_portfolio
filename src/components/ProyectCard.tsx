@@ -20,7 +20,15 @@ interface props {
 }
 
 const ProyectCard = ({ data }: props) => {
-	const { title, description,shortDescription, githubLinks, siteLink, technologys, imgs } = data;
+	const {
+		title,
+		description,
+		shortDescription,
+		githubLinks,
+		siteLink,
+		technologys,
+		imgs,
+	} = data;
 
 	const [imgSelected, setImgSelected] = useState<number>(0);
 
@@ -151,7 +159,7 @@ const ProyectCard = ({ data }: props) => {
 							width: "100%",
 							height: "100%",
 							objectFit: "contain",
-							boxShadow:"1px 1px 4px #0004"
+							boxShadow: "1px 1px 4px #0004",
 						}}
 					/>
 				</Box>
@@ -170,100 +178,53 @@ const ProyectCard = ({ data }: props) => {
 					onClick={handleClose}
 				>
 					<Box
-						onClick={(e) => e.stopPropagation()}
 						sx={{
 							position: "relative",
 							display: "flex",
-							alignItems: "center",
+							flexDirection: "column",
+							height: "100%",
+							maxHeight: "99vh",
+							width: "100%",
 						}}
 					>
-						<Image
-							src={imgs[imgSelected]}
-							alt="proyect example"
-							style={{
-								width: "100%",
-								height: "100%",
-								objectFit: "contain",
-							}}
-						/>
-
+						{/* close */}
 						<Box
-							onClick={lastImage}
 							sx={{
-								position: "absolute",
-								left: 0,
-								width: "30%",
-								height: "100%",
+								pr: 1,
 								display: "flex",
-								alignItems: "center",
-								p: 2,
-								background: "#fff0",
-								":hover": {
-									background: "linear-gradient(90deg, #0003 0%, #0000 100%)",
-								},
-							}}
-						>
-							<ChevronLeftIcon sx={{ color: "#888" }} />
-						</Box>
-						<Box
-							onClick={nextImage}
-							sx={{
-								position: "absolute",
-								right: 0,
-								width: "30%",
-								height: "100%",
-
-								display: "flex",
-								alignItems: "center",
 								justifyContent: "flex-end",
-								p: 2,
-								background: "#fff0",
-								":hover": {
-									background: "linear-gradient(-90deg, #0003 0%, #0000 100%)",
-								},
 							}}
 						>
-							<ChevronRightIcon sx={{ color: "#888" }} />
-						</Box>
-					</Box>
-
-					<Box
-						onClick={(e) => e.stopPropagation()}
-						sx={{
-							position: "absolute",
-							bottom: "1rem",
-
-							px: 2,
-							py: 1,
-							// background: "red",
-							display: "flex",
-							overflowX: "auto",
-							overflowY: "hidden",
-
-							"&>.MuiBox-root": {
-								mr: 1,
-								flexShrink: 0,
-								height: "5rem",
-								borderRadius: 1,
-								overflow: "hidden",
-							},
-						}}
-					>
-						{imgs.map((img, index) => (
-							<Box
-								key={index}
-								ref={imgSelected == index ? selectImagen : null}
-								onClick={() => {
-									setImgSelected(index);
-								}}
+							<IconButton
 								sx={{
-									transition: "outline 150ms",
-									outline: imgSelected == index ? "2px solid red" : "none",
+									color: "#fff",
+								}}
+							>
+								<CloseIcon />
+							</IconButton>
+						</Box>
+
+						{/* imagenes */}
+						<Box
+							sx={{
+								position: "relative",
+								flexGrow: 1,
+								flexShrink: 1,
+								display: "flex",
+								justifyContent: "center",
+								alignItems: "center",
+							}}
+						>
+							<Box
+								sx={{
+									height: "75vh",
 								}}
 							>
 								<Image
-									src={img}
+									onClick={(e) => e.stopPropagation()}
+									src={imgs[imgSelected]}
 									alt="proyect example"
+									width={900}
 									style={{
 										width: "100%",
 										height: "100%",
@@ -271,19 +232,110 @@ const ProyectCard = ({ data }: props) => {
 									}}
 								/>
 							</Box>
-						))}
-					</Box>
 
-					<IconButton
-						sx={{
-							position: "absolute",
-							right: "1rem",
-							top: "1rem",
-							color: "#fff",
-						}}
-					>
-						<CloseIcon />
-					</IconButton>
+							<Box
+								onClick={(e) => {
+									e.stopPropagation();
+									lastImage();
+								}}
+								sx={{
+									position: "absolute",
+									left: 0,
+									width: "50%",
+									height: "100%",
+									display: "flex",
+									alignItems: "center",
+									p: 2,
+									background: "#fff0",
+									":hover": {
+										background: "linear-gradient(90deg, #0003 0%, #0000 100%)",
+									},
+								}}
+							>
+								<ChevronLeftIcon
+									sx={{
+										color: "#000",
+										filter: "drop-shadow(1px 1px 6px #000)",
+									}}
+								/>
+							</Box>
+							<Box
+								onClick={(e) => {
+									e.stopPropagation();
+									nextImage();
+								}}
+								sx={{
+									position: "absolute",
+									right: 0,
+									width: "50%",
+									height: "100%",
+
+									display: "flex",
+									alignItems: "center",
+									justifyContent: "flex-end",
+									p: 2,
+									background: "#fff0",
+									":hover": {
+										background: "linear-gradient(-90deg, #0003 0%, #0000 100%)",
+									},
+								}}
+							>
+								<ChevronRightIcon
+									sx={{
+										color: "#000",
+										filter: "drop-shadow(1px 1px 6px #000)",
+									}}
+								/>
+							</Box>
+						</Box>
+
+						{/* miniaturas */}
+						<Box
+							onClick={(e) => e.stopPropagation()}
+							sx={{
+								position: "relative",
+								px: 2,
+								py: 1,
+								// background: "red",
+								display: "flex",
+								overflowX: "auto",
+								overflowY: "hidden",
+
+								"&>.MuiBox-root": {
+									mr: 1,
+									flexShrink: 0,
+									height: "5rem",
+									borderRadius: 1,
+									overflow: "hidden",
+								},
+							}}
+						>
+							{imgs.map((img, index) => (
+								<Box
+									key={index}
+									ref={imgSelected == index ? selectImagen : null}
+									onClick={() => {
+										setImgSelected(index);
+									}}
+									sx={{
+										transition: "outline 150ms",
+										outline:
+											imgSelected == index ? "2px solid #A800FD" : "none",
+									}}
+								>
+									<Image
+										src={img}
+										alt="proyect example"
+										style={{
+											width: "100%",
+											height: "100%",
+											objectFit: "contain",
+										}}
+									/>
+								</Box>
+							))}
+						</Box>
+					</Box>
 				</Backdrop>
 			)}
 		</>

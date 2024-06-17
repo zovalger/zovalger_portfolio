@@ -1,4 +1,5 @@
 import logo_color from "@/assets/logo_color.jpg";
+import me from "@/assets/me.png";
 import proyects from "./proyects";
 
 const content = {
@@ -8,7 +9,7 @@ const content = {
 	},
 
 	main: {
-		img: logo_color,
+		img: me,
 		shortDescrition: [
 			"Hola, soy Germán Castro, un apasionado desarrollador web, especializado en el stack MERN con más de dos años de experiencia en la creación de sitios y aplicaciones web. He tenido el privilegio de trabajar en varios proyectos que van desde páginas web informativas hasta grandes proyectos personales, en los cuales he logrado adquirir conocimientos tanto de frontend como de backend.",
 		],
