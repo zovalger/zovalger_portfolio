@@ -16,6 +16,7 @@ import {
 	Button,
 	IconButton,
 	Typography,
+	Zoom,
 	useMediaQuery,
 	useTheme,
 } from "@mui/material";
@@ -34,6 +35,8 @@ import { CssBaseline } from "@mui/material";
 import themeConfig from "./theme";
 import content from "@/content";
 import NavBar from "@/components/NavBar";
+import { useRef } from "react";
+import useIntersectionObserver from "@/hooks/useIntersectionObserver";
 
 export default function Home() {
 	const theme = useTheme();
@@ -72,92 +75,97 @@ export default function Home() {
 						columnSpacing={5}
 						sx={{ maxWidth: "1000px" }}
 					>
-						<Grid item xs={12} sm={6} sx={{ order: { xs: 1, sm: 0 } }}>
-							<Typography sx={{ fontSize: 60, fontWeight: 600 }}>
-								<Typography
-									sx={{ fontSize: 60, fontWeight: 600, color: "#A800FD" }}
-									component={"span"}
-								>
-									Frontend{" "}
+						<Zoom in style={{ transitionDuration: "300ms" }}>
+							<Grid item xs={12} sm={6} sx={{ order: { xs: 1, sm: 0 } }}>
+								<Typography sx={{ fontSize: 60, fontWeight: 600 }}>
+									<Typography
+										sx={{ fontSize: 60, fontWeight: 600, color: "#A800FD" }}
+										component={"span"}
+									>
+										Frontend{" "}
+									</Typography>
+									Developer
 								</Typography>
-								Developer
-							</Typography>
 
-							{content.main.shortDescrition.map((text, index) => (
-								<Typography key={index}>{text}</Typography>
-							))}
+								{content.main.shortDescrition.map((text, index) => (
+									<Typography key={index}>{text}</Typography>
+								))}
 
-							<Box
-								sx={{
-									display: "flex",
-									justifyContent: { xs: "space-evenly", sm: "flex-start" },
-									my: 2,
-									".MuiIconButton-root": {
-										mr: 1,
-										transition: "transform 100ms",
-										":hover": { transform: "scale(1.1)" },
-										".MuiSvgIcon-root": { color: "#000" },
-									},
-								}}
-							>
-								<IconButton href="https://github.com/zovalger" target="blank">
-									<GitHubIcon />
-								</IconButton>
-								<IconButton
-									href="https://www.linkedin.com/in/zovalger/"
-									target="blank"
-								>
-									<LinkedInIcon />
-								</IconButton>
-								<IconButton href="mailto:zovalger@gmail.com" target="blank">
-									<EmailIcon />
-								</IconButton>
-								<IconButton href="https://t.me/zovalger" target="blank">
-									<TelegramIcon />
-								</IconButton>
-							</Box>
-							<Box
-								sx={{
-									display: "flex",
-									justifyContent: { xs: "center", sm: "flex-start" },
-									mt: 1,
-								}}
-							>
-								<Button
-									color="primary"
-									variant="outlined"
-									sx={{ textTransform: "none" }}
-								>
-									Descargar CV
-								</Button>
-							</Box>
-						</Grid>
-						<Grid
-							item
-							xs={12}
-							sm={6}
-							sx={{ display: "flex", justifyContent: "center" }}
-						>
-							<Box
-								sx={{
-									// background: "red",
-									width: { xs: "50%", sm: "100%" },
-									maxHeight: { xs: "auto", sm: "70%" },
-									// borderRadius: "50%",
-								}}
-							>
-								<Image
-									src={content.main.img}
-									alt="logo zovalger"
-									width={480}
-									style={{
-										width: "100%",
-										height: "100%",
-										objectFit: "contain",
+								<Box
+									sx={{
+										display: "flex",
+										justifyContent: { xs: "space-evenly", sm: "flex-start" },
+										my: 2,
+										".MuiIconButton-root": {
+											mr: 1,
+											transition: "transform 100ms",
+											":hover": { transform: "scale(1.1)" },
+											".MuiSvgIcon-root": { color: "#000" },
+										},
 									}}
-								/>
-							</Box>
-						</Grid>
+								>
+									<IconButton href="https://github.com/zovalger" target="blank">
+										<GitHubIcon />
+									</IconButton>
+									<IconButton
+										href="https://www.linkedin.com/in/zovalger/"
+										target="blank"
+									>
+										<LinkedInIcon />
+									</IconButton>
+									<IconButton href="mailto:zovalger@gmail.com" target="blank">
+										<EmailIcon />
+									</IconButton>
+									<IconButton href="https://t.me/zovalger" target="blank">
+										<TelegramIcon />
+									</IconButton>
+								</Box>
+								<Box
+									sx={{
+										display: "flex",
+										justifyContent: { xs: "center", sm: "flex-start" },
+										mt: 1,
+									}}
+								>
+									<Button
+										color="primary"
+										variant="outlined"
+										sx={{ textTransform: "none" }}
+									>
+										Descargar CV
+									</Button>
+								</Box>
+							</Grid>
+						</Zoom>
+						<Zoom in style={{transitionDuration:"300ms" }}>
+
+							<Grid
+								item
+								xs={12}
+								sm={6}
+								sx={{ display: "flex", justifyContent: "center" }}
+							>
+								<Box
+									sx={{
+										// background: "red",
+										width: { xs: "50%", sm: "100%" },
+										maxHeight: { xs: "auto", sm: "70%" },
+										// borderRadius: "50%",
+									}}
+								>
+									<Image
+										src={content.main.img}
+										alt="logo zovalger"
+										width={480}
+										style={{
+											width: "100%",
+											height: "100%",
+											objectFit: "contain",
+										}}
+									/>
+								</Box>
+							</Grid>
+						</Zoom>
 					</Grid>
 				</Box>
 				{/* *****************************************************
@@ -194,7 +202,6 @@ export default function Home() {
 
 						{isMd ? (
 							<>
-								{" "}
 								<Box sx={{ display: "flex", mt: 8 }}>
 									<Rombo icon={reactIcon} />
 									<Rombo icon={nextIcon} p={1} />
