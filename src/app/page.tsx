@@ -33,6 +33,7 @@ import { ThemeProvider } from "@emotion/react";
 import { CssBaseline } from "@mui/material";
 import themeConfig from "./theme";
 import content from "@/content";
+import NavBar from "@/components/NavBar";
 
 export default function Home() {
 	const theme = useTheme();
@@ -48,6 +49,7 @@ export default function Home() {
 			<ThemeProvider theme={themeConfig}>
 				<CssBaseline />
 				<Box
+					id="hero"
 					sx={{
 						display: "flex",
 						justifyContent: "center",
@@ -162,6 +164,7 @@ export default function Home() {
                                    conocimientos
         *****************************************************	*/}
 				<Box
+					id="learn"
 					sx={{
 						background: "#F4F4F4",
 						maxHeight: "1080px",
@@ -243,6 +246,7 @@ export default function Home() {
                                    proyectos
         *****************************************************	*/}
 				<Box
+					id="proyects"
 					sx={{
 						minHeight: "500px",
 						display: "flex",
@@ -285,6 +289,7 @@ export default function Home() {
 					</Box>
 				</Box>
 				<Box
+					id="more_about"
 					sx={{
 						background: "#F4F4F4",
 						maxHeight: "1080px",
@@ -358,6 +363,7 @@ export default function Home() {
 					</Box>
 				</Box>
 				<Box
+					id="contact"
 					sx={{
 						display: "flex",
 						justifyContent: "center",
@@ -423,54 +429,7 @@ export default function Home() {
 				{/* *****************************************************
                                    navbar
         *****************************************************	*/}
-				<Box
-					sx={{
-						display: "flex",
-						flexDirection: "column",
-						alignItems: "center",
-						position: "fixed",
-						top: 0,
-						width: "100%",
-						background: "#fffe",
-						backdropFilter: "blur(3px)",
-					}}
-				>
-					<Box
-						sx={{
-							maxWidth: "1000px",
-							display: "flex",
-							justifyContent: "space-between",
-							px: 2,
-							py: 1,
-							width: "100%",
-						}}
-					>
-						<Box sx={{ display: "flex", alignItems: "center" }}>
-							<Box sx={{ width: 50, height: 50, mr: 1 }}>
-								<Image
-									src={content.nav.logo}
-									alt="logo zovalger"
-									style={{ width: "100%", height: "100%", objectFit: "cover" }}
-								/>
-							</Box>
-
-							<Typography sx={{ fontSize: 20 }} component="span">
-								{content.nav.brandName}
-							</Typography>
-						</Box>
-
-						<Box>
-							<IconButton>
-								<MenuIcon />
-							</IconButton>
-						</Box>
-
-						{/* <Box>
-            <Button> herramientas </Button>
-            <Button> Proyectos </Button>
-          </Box> */}
-					</Box>
-				</Box>
+				<NavBar />
 			</ThemeProvider>
 		</>
 	);
