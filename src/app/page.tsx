@@ -330,7 +330,7 @@ export default function Home() {
 							<Grid
 								item
 								xs={12}
-								sm={6}
+								sm={12}
 								sx={{
 									order: { xs: 1, sm: 0 },
 								}}
@@ -341,7 +341,7 @@ export default function Home() {
 									</Typography>
 								))}
 							</Grid>
-							<Grid
+							{/* <Grid
 								item
 								xs={12}
 								sm={6}
@@ -365,7 +365,7 @@ export default function Home() {
 										}}
 									/>
 								</Box>
-							</Grid>
+							</Grid> */}
 						</Grid>
 					</Box>
 				</Box>
