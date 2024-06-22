@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Box from "@mui/material/Box";
 
 import mongooseIcon from "@/assets/logosSoftware/mongoose.png";
@@ -62,25 +62,27 @@ const InfinityHorizontalScroll = () => {
 		};
 	}, [containerScroll.current]);
 
-	const lineOne = firstLine.map((imgData, index) => (
+	const formatedImage = (image: StaticImageData, index: number) => (
 		<Image
-			src={imgData}
+			src={image}
 			key={index}
 			alt="software Icon"
 			height={32}
-			style={{ maxHeight: 32, marginRight: 48, width: "auto" }}
+			style={{
+				maxHeight: 32,
+				marginRight: 48,
+				width: "auto",
+			}}
 		/>
-	));
+	);
 
-	const lineTwo = secondLine.map((imgData, index) => (
-		<Image
-			src={imgData}
-			key={index}
-			alt="software Icon"
-			height={32}
-			style={{ maxHeight: 32, marginRight: 48, width: "auto" }}
-		/>
-	));
+	const lineOne = firstLine.map((imgData, index) =>
+		formatedImage(imgData, index)
+	);
+
+	const lineTwo = secondLine.map((imgData, index) =>
+		formatedImage(imgData, index)
+	);
 
 	return (
 		<Box
@@ -105,9 +107,15 @@ const InfinityHorizontalScroll = () => {
 				ref={containerScroll}
 				sx={{
 					overflowX: "scroll",
+					py: 1,
 					px: 8,
 					"::-webkit-scrollbar": {
 						display: "none",
+					},
+
+					img: {
+						transition: "transform 100ms",
+						":hover": { transform: "scale(1.1)" },
 					},
 				}}
 			>

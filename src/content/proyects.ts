@@ -96,17 +96,15 @@ export interface proyectData {
 
 const proyects: proyectData[] = [
 	{
-		title: "Zovalger ToDo",
+		title: "Zovalger ToDo (En desarrollo)",
 		shortDescription: [
 			"Software full stack inspirada en la aplicación Microsoft ToDo",
-			"(En desarrollo)",
 		],
 		description: [
 			"Software full stack inspirada en la aplicación Microsoft ToDo",
-			"(En desarrollo)",
 		],
 		githubLinks: [
-			"https://github.com/zovalger/to_do_app_server",
+			// "https://github.com/zovalger/to_do_app_server",
 			"https://github.com/zovalger/to_do_app",
 		],
 		siteLink: ["https://to-do-app-zovalger.vercel.app/"],
@@ -128,7 +126,100 @@ const proyects: proyectData[] = [
 		],
 		imgs: [zovalger_todo_1],
 	},
+	{
+		title: "Odaly Sport",
+		shortDescription: [
+			"Es un e-commerce ficticio para la venta de prendas deportivas, posee vistas con acceso limitado para los usuarios no registrados, vista principal para usuario logueados y una interfaz administrativa.",
+		],
 
+		description: [
+			"Es un e-commerce ficticio para la venta de prendas deportivas, posee vistas con acceso limitado para los usuarios no registrados y registro para usuarios, registro de compras para los usuarios, método de pago por tarjeta de crédito (se usó una api ficticia para validar el pago ). Además cuenta con una interfaz administrativa que posee CRUD de categorías, registro de transacciones, registro de clientes, CRUD de productos a los que se le tiene la posibilidad de colocar links de imágenes y colocar una como destacada.",
+		],
+		githubLinks: ["https://github.com/odalypadrino/P3_16804490"],
+		siteLink: ["https://sport-shop-odaly.onrender.com/"],
+		technologys: [
+			"Node.js",
+			"EJS",
+			"Passport",
+			"Cookies",
+			"Sequelize",
+			"Sqlite",
+			"Typescript",
+			"JWT",
+			"Sendgrid",
+		],
+		imgs: [
+			odaly_sport_1,
+			odaly_sport_2,
+			odaly_sport_3,
+			odaly_sport_4,
+			odaly_sport_5,
+			odaly_sport_6,
+			odaly_sport_7,
+			odaly_sport_8,
+			odaly_sport_9,
+			odaly_sport_10,
+			odaly_sport_11,
+		],
+	},
+
+	{
+		title: "Gothere ",
+		shortDescription: [
+			"Es una landing page para a una empresa ficticia sobre turismo dentro del estado Guárico de Venezuela",
+		],
+		description: [
+			"Es una landing page destinada a una empresa ficticia sobre turismo dentro del estado Guárico de Venezuela, expresa todos los servicios y objetivos de dicha empresa",
+		],
+		githubLinks: ["https://github.com/zovalger/gothere"],
+		siteLink: ["https://gothere-site.vercel.app/"],
+		technologys: ["React", "Next.JS", "Bootstrap", "React-Bootstrap"],
+		imgs: [
+			gothere_1,
+			gothere_2,
+			gothere_3,
+			gothere_4,
+			gothere_5,
+			gothere_6,
+			gothere_7,
+		],
+	},
+
+	{
+		title: "Jeanger",
+		shortDescription: [
+			"Proyecto Full Stack MERN destinado para la empresa Inversiones Jeanger, que les proporciona múltiples herramientas para la búsqueda y facturación de productos, cronómetros para gestión de tareas y sincronización entre todas las instancias de la interfaz",
+		],
+		description: [
+			"Proyecto Full Stack MERN destinado principalmente para la empresa Inversiones Jeanger, que les proporciona múltiples herramientas para la búsqueda y facturación de productos, cronómetros para gestión de tareas que a su vez están sincronizados entre todas las instancias de la interfaz, además de proporcionarle un inventario que da una visión general de todos los productos.",
+			"El cliente y el servidor son dos servidores separados comunicados por una  API REST ",
+		],
+		githubLinks: [
+			"https://github.com/zovalger/JEANGER-APP",
+			"https://github.com/zovalger/JEANGER-APP-SERVER",
+		],
+		siteLink: [
+			// "https://jeanger.vercel.app/"
+		],
+		technologys: [
+			"React",
+			"Material UI",
+			"Redux",
+			"Axios",
+			"Moment",
+			"Formik",
+			"Socket.IO",
+			"Yup",
+			"Express ",
+			"JWT",
+			"Mongoose",
+			"Cheerio",
+			"Cloudinary",
+			"Node-Cron",
+			"MongoDB",
+		],
+		imgs: [jeanger_1, jeanger_2, jeanger_3, jeanger_4, jeanger_5],
+	},
 	{
 		title: "Petición de documentos de la UNERG",
 		shortDescription: [
@@ -181,39 +272,6 @@ const proyects: proyectData[] = [
 	},
 
 	{
-		title: "Jeanger",
-		shortDescription: [
-			"Proyecto Full Stack MERN destinado para la empresa Inversiones Jeanger, que les proporciona múltiples herramientas para la búsqueda y facturación de productos, cronómetros para gestión de tareas y sincronización entre todas las instancias de la interfaz",
-		],
-		description: [
-			"Proyecto Full Stack MERN destinado principalmente para la empresa Inversiones Jeanger, que les proporciona múltiples herramientas para la búsqueda y facturación de productos, cronómetros para gestión de tareas que a su vez están sincronizados entre todas las instancias de la interfaz, además de proporcionarle un inventario que da una visión general de todos los productos.",
-			"El cliente y el servidor son dos servidores separados comunicados por una  API REST ",
-		],
-		githubLinks: [
-			"https://github.com/zovalger/JEANGER-APP",
-			"https://github.com/zovalger/JEANGER-APP-SERVER",
-		],
-		siteLink: ["https://jeanger.vercel.app/"],
-		technologys: [
-			"React",
-			"Material UI",
-			"Redux",
-			"Axios",
-			"Moment",
-			"Formik",
-			"Socket.IO",
-			"Yup",
-			"Express ",
-			"JWT",
-			"Mongoose",
-			"Cheerio",
-			"Cloudinary",
-			"Node-Cron",
-			"MongoDB",
-		],
-		imgs: [jeanger_1, jeanger_2, jeanger_3, jeanger_4, jeanger_5],
-	},
-	{
 		title: "Fupagua",
 		shortDescription: [
 			"Es una web app desarrollada para la fundación FUPAGUA, cuenta con un módulo de registro de usuarios con permisos, registro de libros, registros de pacientes, y módulo gestión multimedia para su landing page",
@@ -223,7 +281,7 @@ const proyects: proyectData[] = [
 			"Es un software Full Stack desarrollado para la fundación FUPAGUA,  cuenta con un módulo de registro de libros, registros de pacientes, y módulo gestión multimedia para su landing page, además de un registro de usuarios para el uso interno del software según los permisos otorgados a dicho usuario",
 		],
 		githubLinks: ["https://github.com/zovalger/fupagua-Internal-system"],
-		siteLink: ["https://fupagua-internal-system-copy.onrender.com/"],
+		// siteLink: ["https://fupagua-internal-system-copy.onrender.com/"],
 		technologys: [
 			"Axios",
 			"Bootstrap",
@@ -312,65 +370,6 @@ const proyects: proyectData[] = [
 			unerg_tgs_19,
 			unerg_tgs_20,
 			unerg_tgs_21,
-		],
-	},
-
-	{
-		title: "Odaly Sport",
-		shortDescription: [
-			"Es un e-commerce ficticio para la venta de prendas deportivas, posee vistas con acceso limitado para los usuarios no registrados, vista principal para usuario logueados y una interfaz administrativa.",
-		],
-
-		description: [
-			"Es un e-commerce ficticio para la venta de prendas deportivas, posee vistas con acceso limitado para los usuarios no registrados y registro para usuarios, registro de compras para los usuarios, método de pago por tarjeta de crédito (se usó una api ficticia para validar el pago ). Además cuenta con una interfaz administrativa que posee CRUD de categorías, registro de transacciones, registro de clientes, CRUD de productos a los que se le tiene la posibilidad de colocar links de imágenes y colocar una como destacada.",
-		],
-		githubLinks: ["https://github.com/odalypadrino/P3_16804490"],
-		siteLink: ["https://sport-shop-odaly.onrender.com/"],
-		technologys: [
-			"Node.js",
-			"EJS",
-			"Passport",
-			"Cookies",
-			"Sequelize",
-			"Sqlite",
-			"Typescript",
-			"JWT",
-			"Sendgrid",
-		],
-		imgs: [
-			odaly_sport_1,
-			odaly_sport_2,
-			odaly_sport_3,
-			odaly_sport_4,
-			odaly_sport_5,
-			odaly_sport_6,
-			odaly_sport_7,
-			odaly_sport_8,
-			odaly_sport_9,
-			odaly_sport_10,
-			odaly_sport_11,
-		],
-	},
-
-	{
-		title: "Gothere ",
-		shortDescription: [
-			"Es una landing page para a una empresa ficticia sobre turismo dentro del estado Guárico de Venezuela",
-		],
-		description: [
-			"Es una landing page destinada a una empresa ficticia sobre turismo dentro del estado Guárico de Venezuela, expresa todos los servicios y objetivos de dicha empresa",
-		],
-		githubLinks: ["https://github.com/zovalger/gothere"],
-		siteLink: ["https://gothere-site.vercel.app/"],
-		technologys: ["React", "Next.JS", "Bootstrap", "React-Bootstrap"],
-		imgs: [
-			gothere_1,
-			gothere_2,
-			gothere_3,
-			gothere_4,
-			gothere_5,
-			gothere_6,
-			gothere_7,
 		],
 	},
 ];

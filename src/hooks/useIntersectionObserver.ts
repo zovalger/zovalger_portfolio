@@ -19,7 +19,7 @@ const useIntersectionObserver = ({
 	const [InOb, setInOb] = useState<null | IntersectionObserver>(null);
 
 	const handleVisible = () => {
-		console.log("visto");
+		// console.log("visto");
 
 		setObserved(true);
 		onVisible();

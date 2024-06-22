@@ -107,19 +107,19 @@ const ProyectCard = ({ data }: props) => {
 								variant="outlined"
 								onClick={(e) => e.stopPropagation()}
 								href={githubLinks[0]}
-								target="blank"
+								target="_BLANK"
 							>
 								<GitHubIcon />
 							</Button>
 						</Tooltip>
 
-						{siteLink && (
+						{!!siteLink?.length && (
 							<Tooltip title="Web APP">
 								<Button
 									variant="outlined"
 									onClick={(e) => e.stopPropagation()}
 									href={siteLink[0]}
-									target="blank"
+									target="_BLANK"
 								>
 									<OpenInBrowserIcon />
 								</Button>
