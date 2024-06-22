@@ -107,7 +107,7 @@ const proyects: proyectData[] = [
 			// "https://github.com/zovalger/to_do_app_server",
 			"https://github.com/zovalger/to_do_app",
 		],
-		siteLink: ["https://to-do-app-zovalger.vercel.app/"],
+		siteLink: ["https://zovalger-to-do-app.vercel.app/"],
 		technologys: [
 			"React",
 			"Next.Js",
