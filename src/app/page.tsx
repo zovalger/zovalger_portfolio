@@ -141,7 +141,7 @@ export default function Home() {
 											color="primary"
 											variant="outlined"
 											LinkComponent={"a"}
-											href="https://drive.usercontent.google.com/u/0/uc?id=1YXlLH_EvFiAc93E9Re-Fq6mZ9DLEnxiz&export=download"
+											href="https://drive.usercontent.google.com/u/0/uc?id=1IdV_dwazmkPQhVMRgyL4Vz3E-Y6n_F0n&export=download"
 											sx={{ textTransform: "none" }}
 										>
 											Descargar CV
