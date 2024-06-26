@@ -64,18 +64,18 @@ const NavBar = () => {
 					transition: ":before 200ms",
 					color: "#A800FD",
 					textTransform: "capitalize",
-					":before":
-						sectionId == id
-							? {
-									content: '""',
-									borderBottom: "2px solid #A800FD",
-									top: 0,
-									left: "30%",
-									bottom: 0,
-									right: "30%",
-									position: "absolute",
-							  }
-							: {},
+					// ":before":
+					// 	sectionId == id
+					// 		? {
+					// 				content: '""',
+					// 				borderBottom: "2px solid #A800FD",
+					// 				top: 0,
+					// 				left: "30%",
+					// 				bottom: 0,
+					// 				right: "30%",
+					// 				position: "absolute",
+					// 		  }
+					// 		: {},
 				}}
 			>
 				{name}
